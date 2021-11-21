@@ -1,5 +1,6 @@
 from modelo import Filme
 from modelo import Serie
+
 print("TESTE - Modelo - Inicio")
 vingadores = Filme("vingadores - guerra infinita", 2018, 160)
 vingadores.dar_like()
