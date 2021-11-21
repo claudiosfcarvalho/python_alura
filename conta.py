@@ -3,7 +3,7 @@ class Conta:
     # Construtor
     def __init__(self, numero, titular, saldo, limite):
         print(f"Contruindo objeto ...{self}")
-        # os dois underscore antes do campo indica campo privado
+        # os dois underscore antes do campo indica campo 'privado'
         self.__numero = numero
         self.__titular = titular
         self.__saldo = saldo
@@ -23,3 +23,23 @@ class Conta:
     def transfere(self, valor, destino):
         self.saca(valor)
         destino.deposita(valor)
+
+    @property
+    def saldo(self):
+        print("chamando @property saldo()")
+        return self.__saldo
+
+    @property
+    def titular(self):
+        print("chamando @property titular()")
+        return self.__titular
+
+    @property
+    def limite(self):
+        print("chamando @property limite()")
+        return self.__limite
+
+    @limite.setter
+    def limite(self, valor):
+        print("chamando setter limite()")
+        self.__limite = valor
