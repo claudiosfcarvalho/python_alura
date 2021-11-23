@@ -1,44 +1,13 @@
+from programa import Programa
 
-class Filme:
+class Filme(Programa):
     def __init__(self, nome, ano, duracao):
-        self.__nome = nome.title()
-        self.ano = ano
+        super().__init__(nome, ano, 0)
         self.duracao = duracao
-        self.__likes = 0
 
-    @property
-    def likes(self):
-        return self.__likes
 
-    @property
-    def nome(self):
-        return self.__nome
-
-    @nome.setter
-    def nome(self, nome):
-        self.__nome = nome.title()
-
-    def dar_like(self):
-        self.__likes += 1
-
-class Serie:
+class Serie(Programa):
     def __init__(self, nome, ano, temporadas):
-        self.__nome = nome.title()
-        self.ano = ano
+        super().__init__(nome, ano, 0)
         self.temporadas = temporadas
-        self.__likes = 0
 
-    @property
-    def likes(self):
-        return self.__likes
-
-    @property
-    def nome(self):
-        return self.__nome
-
-    @nome.setter
-    def nome(self, nome):
-        self.__nome = nome.title()
-
-    def dar_like(self):
-        self.__likes += 1
