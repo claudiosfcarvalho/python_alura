@@ -11,3 +11,5 @@ class Serie(Programa):
         super().__init__(nome, ano, 0)
         self.temporadas = temporadas
 
+    def __str__(self):
+        return f"Nome: {self.nome} - Ano: {self.ano} - Temporadas: {self.temporadas}"
