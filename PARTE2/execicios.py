@@ -20,7 +20,8 @@ lista_filmes.add_item(Filme("Batman", 2018, 160))
 lista_filmes.add_item(Filme("Era do gelo", 2018, 160))
 
 indice = 1
-print("Vingadores está na lista? ",vingadores in lista_filmes.listagem)
-for programa in lista_filmes.listagem:
+print("Vingadores está na lista? ",vingadores in lista_filmes)
+print("Tamanho da playlist: ", len(lista_filmes))
+for programa in lista_filmes:
       print(f"{indice} -> {programa}")
       indice += 1

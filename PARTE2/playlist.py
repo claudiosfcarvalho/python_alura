@@ -5,6 +5,13 @@ class Playlist:
         self.__nome = nome
         self._programas = programas
 
+    #Torna a classa iterable
+    def __getitem__(self, item):
+        return self._programas[item]
+
+    def __len__(self):
+        return len(self._programas)
+
     @property
     def nome(self):
         return self.nome
