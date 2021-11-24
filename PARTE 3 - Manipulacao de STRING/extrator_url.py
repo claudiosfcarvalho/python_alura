@@ -1,17 +1,25 @@
+from validador_url import valida_composicao_url
+
+
+def sanitiza_url(url):
+    if type(url) == str:
+        return url.strip()
+    else:
+        return ""
+
+
+def valida_url(url):
+    print(f'Valida URL: {url}')
+    if not url:
+        raise ValueError("A URL está vazia")
+    valida_composicao_url(url)
+
+
 class ExtratorURL:
     def __init__(self, url):
-        self.url = self.sanitiza_url(url)
+        self.url = sanitiza_url(url)
         print(f'URL Sanitizada: {self.url}')
-
-    def sanitiza_url(self, url):
-        if type(url) == str:
-            return url.strip()
-        else:
-            return ""
-
-    def valida_url(self):
-        if not self.url:
-            raise ValueError("A URL está vazia")
+        valida_url(self.url)
 
     def get_url_base(self):
         indice_interrogacao = self.url.find('?')
