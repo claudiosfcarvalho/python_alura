@@ -1,10 +1,11 @@
 
-class FilmesESeries:
-    __lista = []
+class Playlist(list):
 
-    def add_item(self, programa):
-        self.__lista.append(programa)
+    def __init__(self, nome, programas):
+        self.__nome = nome
+        super().__init__(programas)
 
     @property
-    def lista(self):
-        return self.__lista
+    def nome(self):
+        return self.nome
+

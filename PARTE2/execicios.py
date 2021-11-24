@@ -1,6 +1,6 @@
 from modelo import Filme
 from modelo import Serie
-from playlist import FilmesESeries
+from playlist import Playlist
 print("TESTE - Modelo - Inicio")
 vingadores = Filme("vingadores - guerra infinita", 2018, 160)
 vingadores.dar_like()
@@ -15,11 +15,12 @@ atlanta.dar_like()
 #       f"- Temporadas: {atlanta.temporadas} "
 #       f"- Likes: {atlanta.likes}")
 
-lista_filmes = FilmesESeries()
-lista_filmes.add_item(vingadores)
-lista_filmes.add_item(atlanta)
-indice = 1
+lista_filmes = Playlist("Fim de Semana",[vingadores, atlanta])
+lista_filmes.append(Filme("Batman", 2018, 160))
+lista_filmes.append(Filme("Era do gelo", 2018, 160))
 
-for programa in lista_filmes.lista:
+indice = 1
+print("Vingadores está na lista? ",vingadores in lista_filmes)
+for programa in lista_filmes:
       print(f"{indice} -> {programa}")
       indice += 1
