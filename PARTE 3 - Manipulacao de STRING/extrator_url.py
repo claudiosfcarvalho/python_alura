@@ -18,7 +18,7 @@ def valida_url(url):
 class ExtratorURL:
     def __init__(self, url):
         self.url = sanitiza_url(url)
-        print(f'URL Sanitizada: {self.url}')
+        print(f'URL Sanitizada: >>{self.url}<<')
         valida_url(self.url)
 
     def get_url_base(self):
