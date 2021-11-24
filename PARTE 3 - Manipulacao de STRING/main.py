@@ -1,9 +1,8 @@
 url = 'https://bytebank.com/cambio?moedaDestino=dolar&quantidade=100&moedaOrigem=real'
-url=" "
 print(f'URL: >>{url}<<')
 
-#Sanitização da URL
-url = url.replace(" ", "")
+#Sanitização da URL retirando espaços e caracteres especiais como tabulação e quebra de linha
+url = url.strip()
 print(f'URL Sanitizada: >>{url}<<')
 
 #Validação da url
