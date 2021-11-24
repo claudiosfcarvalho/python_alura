@@ -16,11 +16,11 @@ atlanta.dar_like()
 #       f"- Likes: {atlanta.likes}")
 
 lista_filmes = Playlist("Fim de Semana",[vingadores, atlanta])
-lista_filmes.append(Filme("Batman", 2018, 160))
-lista_filmes.append(Filme("Era do gelo", 2018, 160))
+lista_filmes.add_item(Filme("Batman", 2018, 160))
+lista_filmes.add_item(Filme("Era do gelo", 2018, 160))
 
 indice = 1
-print("Vingadores está na lista? ",vingadores in lista_filmes)
-for programa in lista_filmes:
+print("Vingadores está na lista? ",vingadores in lista_filmes.listagem)
+for programa in lista_filmes.listagem:
       print(f"{indice} -> {programa}")
       indice += 1
