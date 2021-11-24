@@ -19,6 +19,7 @@ lista_filmes = FilmesESeries()
 lista_filmes.add_item(vingadores)
 lista_filmes.add_item(atlanta)
 indice = 1
+
 for programa in lista_filmes.lista:
-      print(f"{indice} -> {programa.imprime()}")
+      print(f"{indice} -> {programa}")
       indice += 1

@@ -6,7 +6,7 @@ class Filme(Programa):
         super().__init__(nome, ano, 0)
         self.duracao = duracao
 
-    def imprime(self):
+    def __str__(self):
         return f"{self.nome} - Ano {self.ano} - {self.duracao} min - {self.likes} Likes"
 
 
@@ -15,5 +15,5 @@ class Serie(Programa):
         super().__init__(nome, ano, 0)
         self.temporadas = temporadas
 
-    def imprime(self):
+    def __str__(self):
         return f"{self.nome} - Ano {self.ano} - {self.temporadas} temporadas - {self.likes} Likes"
