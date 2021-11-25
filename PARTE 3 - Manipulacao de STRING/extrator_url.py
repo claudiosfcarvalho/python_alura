@@ -43,3 +43,12 @@ class ExtratorURL:
         else:
             valor = self.get_url_parametros()[indice_valor:indice_e_comercial]
         return valor
+
+    def __len__(self):
+        return len(self.url)
+
+    def __str__(self):
+        return f'URL:  {self.url} \nParâmetros: {self.get_url_parametros()} \nURL Base: {self.get_url_base()}'
+
+    def __eq__(self, other):
+        return self.url == other.url
