@@ -37,32 +37,29 @@ class ContaPoupanca(Conta):
 class ContaInvestimento(Conta):
     pass
 
+class ContaSalario:
+    def __init__(self, codigo):
+        self._codigo = codigo
+        self._saldo = 0
 
-print(Conta(88))
+    def deposita(self, valor):
+        self._saldo += valor
 
-conta16 = ContaCorrente(16)
-conta16.deposita(1000)
-conta16.passa_o_mes()
-print(conta16)
+    def __str__(self):
+        return "[>>Codigo {} Saldo {}<<]".format(self._codigo, self._saldo)
 
-conta17 = ContaPoupanca(17)
-conta17.deposita(1000)
-conta17.passa_o_mes()
-print(conta17)
+    def __eq__(self, other):
+        if type(other) != ContaSalario:
+            return False
 
-contas = [conta16, conta17]
-for conta in contas:
-    conta.passa_o_mes()
-    print(conta)
+        return self._codigo == other._codigo and self._saldo == other._saldo
 
-# array - usar apenas para trabalhar com numeros, pois otimiza o armazenamento
-#       quando necessita alto desempenho usar o NumPy
-import array as arr
 
-arr.array('d', [1, 3.5])
+conta1 = ContaSalario(37)
+conta2 = ContaSalario(37)
+print(conta1 == conta2)
 
-import numpy as np
+conta3 = ContaCorrente(37)
+print(conta1 == conta3)
+print(isinstance(conta1, ContaCorrente))
 
-np.array([1, 3.5])
-
-conta_investimento = ContaInvestimento(1234)
